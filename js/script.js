@@ -12,7 +12,9 @@ choix1.addEventListener("click", function() {
         choix1.style.backgroundColor = "green"}
     else if (choix1.getAttribute("class") === "false") {
         choix1.style.backgroundColor = "red";
-        out.innerHTML = "BOUUUUUUUH GROS BEBE"}
+        out.innerHTML = "BOUUUUUUUH GROS BEBE";
+        var audio = new Audio('./img/prout.mp3');
+        audio.play();}
     });
 
 choix2.addEventListener("click", function() {
@@ -20,7 +22,9 @@ choix2.addEventListener("click", function() {
         choix2.style.backgroundColor = "green"}
     else if (choix2.getAttribute("class") === "false") {
         choix2.style.backgroundColor = "red";
-        out.innerHTML = "BOUUUUUUUH GROS BEBE"}
+        out.innerHTML = "BOUUUUUUUH GROS BEBE";
+        var audio = new Audio('./img/prout.mp3');
+        audio.play();}
     });
 
 choix3.addEventListener("click", function() {
@@ -28,7 +32,9 @@ choix3.addEventListener("click", function() {
         choix3.style.backgroundColor = "green"}
     else if (choix3.getAttribute("class") === "false") {
         choix3.style.backgroundColor = "red";
-        out.innerHTML = "BOUUUUUUUH GROS BEBE"}
+        out.innerHTML = "BOUUUUUUUH GROS BEBE";
+        var audio = new Audio('./img/prout.mp3');
+        audio.play();}
     });
 
 choix4.addEventListener("click", function() {
@@ -36,7 +42,9 @@ choix4.addEventListener("click", function() {
         choix4.style.backgroundColor = "green"}
     else if (choix4.getAttribute("class") === "false") {
         choix4.style.backgroundColor = "red";
-        out.innerHTML = "BOUUUUUUUH GROS BEBE"}
+        out.innerHTML = "BOUUUUUUUH GROS BEBE";
+        var audio = new Audio('./img/prout.mp3');
+        audio.play();}
     });
 
 choix5.addEventListener("click", function() {
@@ -44,7 +52,9 @@ choix5.addEventListener("click", function() {
         choix5.style.backgroundColor = "green"}
     else if (choix5.getAttribute("class") === "false") {
         choix5.style.backgroundColor = "red";
-        out.innerHTML = "BOUUUUUUUH GROS BEBE"}
+        out.innerHTML = "BOUUUUUUUH GROS BEBE";
+        var audio = new Audio('./img/prout.mp3');
+        audio.play();}
     });
 
 choix6.addEventListener("click", function() {
@@ -52,5 +62,9 @@ choix6.addEventListener("click", function() {
         choix6.style.backgroundColor = "green"}
     else if (choix6.getAttribute("class") === "false") {
         choix6.style.backgroundColor = "red";
-        out.innerHTML = "BOUUUUUUUH GROS BEBE"}
+        out.innerHTML = "BOUUUUUUUH GROS BEBE";
+        var audio = new Audio('./img/prout.mp3');
+        audio.play();}
     });
+
+
