@@ -4,9 +4,10 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-h1{
-    background-color: red;
+h1 {
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent red */
     text-align: center;
+
 }
 
 article{
@@ -19,6 +20,8 @@ article{
     flex-wrap: wrap;
     flex: auto;
     justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and text color */
 }
 
 article:hover{
@@ -56,6 +59,7 @@ nav a{
     font-weight: bold;
     background-color: grey;
     width: 25%;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and text color */
 }
 
 nav a:hover{
