@@ -14,7 +14,7 @@ article{
     font-size: large;
     border: 2px solid white;
     margin: 2rem;
-    padding: 2rem;
+    padding: 1rem;
     display: flex;
     width: 40%;
     flex-wrap: wrap;
@@ -92,6 +92,6 @@ footer {
 }
 
 main {
-    padding-bottom: 80px; /* Adjust the value as needed based on your footer's height */
-    padding-top: 70px;
+    padding-bottom: 50px; /* Adjust the value as needed based on your footer's height */
+    padding-top: 20px;
 }
