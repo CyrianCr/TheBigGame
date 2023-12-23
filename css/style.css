@@ -7,7 +7,7 @@
 h1 {
     background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent red */
     text-align: center;
-
+    font-style: italic;
 }
 
 article{
@@ -94,4 +94,11 @@ footer {
 main {
     padding-bottom: 50px; /* Adjust the value as needed based on your footer's height */
     padding-top: 20px;
+}
+
+#timer {
+    font-size: 40px;
+    margin: 10px;
+    text-align: center;
+    cursor: pointer;
 }

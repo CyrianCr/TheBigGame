@@ -1,112 +1,54 @@
-let choix1 = document.getElementById("choix1")
-let choix2 = document.getElementById("choix2")
-let choix3 = document.getElementById("choix3")
-let choix4 = document.getElementById("choix4")
-let choix5 = document.getElementById("choix5")
-let choix6 = document.getElementById("choix6")
-let choix7 = document.getElementById("choix7")
-let choix8 = document.getElementById("choix8")
-let choix9 = document.getElementById("choix9")
-let choix10 = document.getElementById("choix10")
+let out = document.getElementById("sortie");
+let interval; // Define interval outside so it can be cleared and reset
+let timerInitialized = false; // To ensure the timer starts only once
+let but = document.getElementById("timer");
 
-let out = document.getElementById("sortie")
+// Function to start or reset the timer
+function startTimer() {
+    clearInterval(interval); // Clear any existing intervals
+    let timeLeft = 10; // Reset time to 10 seconds
+    const timerElement = document.getElementById('timer');
+    timerElement.textContent = timeLeft;
 
-choix1.addEventListener("click", function() {
-    if (choix1.getAttribute("class") === "valid") {
-        choix1.style.backgroundColor = "green"}
-    else if (choix1.getAttribute("class") === "false") {
-        choix1.style.backgroundColor = "red";
-        out.innerHTML = "BOUUUUUUUH GROS BEBE";
+    interval = setInterval(() => {
+        timeLeft--;
+        timerElement.textContent = timeLeft;
+
+        if (timeLeft <= 0) {
+            clearInterval(interval);
+            alert('Temps écoulé ! Faites un choix rapidement la prochaine fois.');
+            // Reset the game or prompt the user to restart/try again
+            timerInitialized = false; // Allow the timer to be started again if necessary
+        }
+    }, 1000); // update every second
+}
+
+function handleChoiceClick() {
+    // Start or reset the timer when a valid choice is made
+    if (this.getAttribute("class") === "valid") {
+        startTimer();
+        this.style.backgroundColor = "green";
+    } else if (this.getAttribute("class") === "false") {
+        this.style.backgroundColor = "red";
+        out.innerHTML = "BOUUUUUUUH GROS BEBE"; // Update the message for a wrong choice
         var audio = new Audio('./img/prout.mp3');
-        audio.play();}
-    });
+        audio.play();
+        clearInterval(interval); // Stop the timer as the game is over
+        // Consider additional game-over logic here
+        timerInitialized = false; // Allow the timer to be started again if necessary
+    }
+}
 
-choix2.addEventListener("click", function() {
-    if (choix2.getAttribute("class") === "valid") {
-        choix2.style.backgroundColor = "green"}
-    else if (choix2.getAttribute("class") === "false") {
-        choix2.style.backgroundColor = "red";
-        out.innerHTML = "BOUUUUUUUH GROS BEBE";
-        var audio = new Audio('./img/prout.mp3');
-        audio.play();}
-    });
+// Attach the choice click handler to each choice element
+for (let i = 1; i <= 10; i++) {
+    let choice = document.getElementById(`choix${i}`);
+    choice.addEventListener("click", handleChoiceClick);
+}
 
-choix3.addEventListener("click", function() {
-    if (choix3.getAttribute("class") === "valid") {
-        choix3.style.backgroundColor = "green"}
-    else if (choix3.getAttribute("class") === "false") {
-        choix3.style.backgroundColor = "red";
-        out.innerHTML = "BOUUUUUUUH GROS BEBE";
-        var audio = new Audio('./img/prout.mp3');
-        audio.play();}
-    });
-
-choix4.addEventListener("click", function() {
-    if (choix4.getAttribute("class") === "valid") {
-        choix4.style.backgroundColor = "green"}
-    else if (choix4.getAttribute("class") === "false") {
-        choix4.style.backgroundColor = "red";
-        out.innerHTML = "BOUUUUUUUH GROS BEBE";
-        var audio = new Audio('./img/prout.mp3');
-        audio.play();}
-    });
-
-choix5.addEventListener("click", function() {
-    if (choix5.getAttribute("class") === "valid") {
-        choix5.style.backgroundColor = "green"}
-    else if (choix5.getAttribute("class") === "false") {
-        choix5.style.backgroundColor = "red";
-        out.innerHTML = "BOUUUUUUUH GROS BEBE";
-        var audio = new Audio('./img/prout.mp3');
-        audio.play();}
-    });
-
-choix6.addEventListener("click", function() {
-    if (choix6.getAttribute("class") === "valid") {
-        choix6.style.backgroundColor = "green"}
-    else if (choix6.getAttribute("class") === "false") {
-        choix6.style.backgroundColor = "red";
-        out.innerHTML = "BOUUUUUUUH GROS BEBE";
-        var audio = new Audio('./img/prout.mp3');
-        audio.play();}
-    });
-
-choix7.addEventListener("click", function() {
-    if (choix7.getAttribute("class") === "valid") {
-        choix7.style.backgroundColor = "green"}
-    else if (choix7.getAttribute("class") === "false") {
-        choix7.style.backgroundColor = "red";
-        out.innerHTML = "BOUUUUUUUH GROS BEBE";
-        var audio = new Audio('./img/prout.mp3');
-        audio.play();}
-    });
-
-choix8.addEventListener("click", function() {
-    if (choix8.getAttribute("class") === "valid") {
-        choix8.style.backgroundColor = "green"}
-    else if (choix8.getAttribute("class") === "false") {
-        choix8.style.backgroundColor = "red";
-        out.innerHTML = "BOUUUUUUUH GROS BEBE";
-        var audio = new Audio('./img/prout.mp3');
-        audio.play();}
-    });
-
-choix9.addEventListener("click", function() {
-    if (choix9.getAttribute("class") === "valid") {
-        choix9.style.backgroundColor = "green"}
-    else if (choix9.getAttribute("class") === "false") {
-        choix9.style.backgroundColor = "red";
-        out.innerHTML = "BOUUUUUUUH GROS BEBE";
-        var audio = new Audio('./img/prout.mp3');
-        audio.play();}
-});
-
-choix10.addEventListener("click", function() {
-    if (choix10.getAttribute("class") === "valid") {
-        choix10.style.backgroundColor = "green"}
-    else if (choix10.getAttribute("class") === "false") {
-        choix10.style.backgroundColor = "red";
-        out.innerHTML = "BOUUUUUUUH GROS BEBE";
-        var audio = new Audio('./img/prout.mp3');
-    audio.play();}
+// Start the timer when 'sortie' is clicked for the first time
+but.addEventListener('click', function() {
+    if (!timerInitialized) {
+        startTimer();
+        timerInitialized = true; // Prevents re-initialization until the game resets
+    }
 });
